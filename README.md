@@ -1,10 +1,17 @@
-# twoFishProject
-This is a To-Do App sent by TwoFish Creative that uses Python &amp; Flask
+## Use
 
+* Flask
+* Flask-SQLAlchemy
 
-## Key Features
-- User Sign In/Sign Up <br>
-- CRUD Methods <br>
-- Set Due Dates <br>
-- Ability to Order To-Do's <br>
-- Marking items as complete <br>
+## Install
+
+```
+In Terminal:
+pip (or pip3) install -r requirements.txt (this depends on how your system is set up)
+```
+## Run
+
+```
+In Terminal:
+python (or python3) app.py (this depends on how your system is set up)
+```
