@@ -1,5 +1,7 @@
 from flask import Flask, redirect, url_for, render_template, request
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import Column, Integer, String, ForeignKey, DateTime
+from datetime import datetime
 import os
 
 
@@ -14,7 +16,15 @@ app.config['DEBUG'] = True
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///book.sqlite'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['DEBUG'] = True
-# db = SQLAlchemy(app)
+db = SQLAlchemy(app)
+
+# database models set up below
+class Todos(db.Model):
+     _id = db.Column(db.Integer, primary_key=True)
+     title = db.Column(db.String(200) , nullable=False)
+     description = db.Column(db.String(500), nullablle=False)
+     created_at = db.Column(db.DateTime, default= datetime.utcnow)
+     
 
 # db.create_all()
 
