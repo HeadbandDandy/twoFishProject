@@ -1,5 +1,6 @@
 from flask import Flask, redirect, url_for, render_template, request
-
+from flask_sqlalchemy import SQLAlchemy
+import os
 
 
 
@@ -13,9 +14,10 @@ app.config['DEBUG'] = True
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///book.sqlite'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['DEBUG'] = True
-
+# db = SQLAlchemy(app)
 
 # db.create_all()
+
 
 
 @app.route("/")
