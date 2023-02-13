@@ -10,4 +10,4 @@ def index():
 # route for login page
 @bp.route('/login')
 def login():
-    return render_template()
+    return render_template('login.html')
