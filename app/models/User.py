@@ -1,7 +1,7 @@
 from typing import ValuesView
 from app.db import Base
 from sqlalchemy import Column, Integer, String, MetaData
-from sqlalchemy.orm import validates
+from sqlalchemy.orm import validates, relationship
 import bcrypt
 
 salt = bcrypt.gensalt()
@@ -12,7 +12,6 @@ class User(Base):
     username = Column(String(50), nullable=False)
     email = Column(String(50), nullable=False)
     password = Column(String(100), nullable=False)
-    
     
     # validation for email goes below 
     @validates('email')
