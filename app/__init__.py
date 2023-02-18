@@ -24,7 +24,7 @@ def create_app(test_config=None):
     app.register_blueprint(home)
     
     
-    init_db()
+    init_db(app)
     
     
     return app 
