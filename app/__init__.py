@@ -1,7 +1,7 @@
 from flask import Flask
 from app.routes import home
 from app.db import init_db
-# from app.utils import filters
+from app.utils import filters
 
 
 def create_app(test_config=None):
@@ -23,6 +23,10 @@ def create_app(test_config=None):
     # register routes here
     app.register_blueprint(home)
     
+    # filters below
+    app.jinja_env.filters['format_url'] = filters.format_url
+    app.jinja_env.filters['format_date'] = filters.format_date
+    app.jinja_env.filters['format_plural_words'] = filters.format_plural_words
     
     init_db(app)
     
@@ -30,9 +34,7 @@ def create_app(test_config=None):
     return app 
     
     
-    # app.jinja_env.filters['format_url'] = filters.format_url
-    # app.jinja_env.filters['format_date'] = filters.format_date
-    # app.jinja_env.filters['format_plural_words'] = filters.format_plural_words
+
 
   
 
