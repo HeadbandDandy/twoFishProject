@@ -10,13 +10,13 @@ def index():
     # get all todos
     db = get_db()
     todos = db.query(ToDo).order_by(ToDo.created_at.desc()).all()
-    return render_template('homepage.html')
+    return render_template('index.html')
 
 # route for login page
-@bp.route('/signin')
-def signin():
-    return render_template('sign-in.html')
-# route for signing up below
+@bp.route('/login')
+def login():
+    return render_template('login.html')
+
 @bp.route('/signup')
 def signup():
     return render_template('signup.html')
