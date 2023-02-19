@@ -5,7 +5,7 @@ from app.db import get_db
 bp = Blueprint('home', __name__, url_prefix='/')
 
 # route for main page
-@bp.route('/homepage')
+@bp.route('/')
 def index():
     # get all todos
     db = get_db()
@@ -13,9 +13,9 @@ def index():
     return render_template('homepage.html')
 
 # route for login page
-@bp.route('/')
+@bp.route('/signin')
 def signin():
-    return render_template('signin.html')
+    return render_template('sign-in.html')
 # route for signing up below
 @bp.route('/signup')
 def signup():
