@@ -1,5 +1,5 @@
 from flask import Flask
-from app.routes import home
+from app.routes import home, api 
 from app.db import init_db
 from app.utils import filters
 
@@ -22,6 +22,7 @@ def create_app(test_config=None):
     
     # register routes here
     app.register_blueprint(home)
+    app.register_blueprint(api)
     
     # filters below
     app.jinja_env.filters['format_url'] = filters.format_url
