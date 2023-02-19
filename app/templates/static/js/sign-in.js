@@ -1,8 +1,9 @@
-async function loginFormHandler(event) {
+async function signUpFormHandler(event) {
     event.preventDefault();
-  
-    const email = document.querySelector('#email-input').value.trim();
-    const password = document.querySelector('#password-input').value.trim();
+
+    const name = document.querySelector('#registration-form').value.trim();
+    const email = document.querySelector('#email-registration').value.trim();
+    const password = document.querySelector('#password-registration').value.trim();
   
     if (email && password) {
       const response = await fetch('/api/users/login', {
@@ -15,11 +16,11 @@ async function loginFormHandler(event) {
       });
   
       if (response.ok) {
-        document.location.replace('/homepage/');
+        document.location.replace('/index/');
       } else {
         alert(response.statusText);
       }
     }
   }
 
-document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
+document.querySelector('.signup-form').addEventListener('submit', signUpFormHandler);
