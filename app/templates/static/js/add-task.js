@@ -6,8 +6,7 @@ async function taskHandler(event) {
     const response = await fetch(`/api/todos`, {
       method: 'POST',
       body: JSON.stringify({
-        title,
-        post_url
+        descr
       }),
       headers: {
         'Content-Type': 'application/json'
