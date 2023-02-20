@@ -1,7 +1,6 @@
 async function taskHandler(event) {
     event.preventDefault();
   
-    const title = document.querySelector('input[name="post-title"]').value;
     const descr = document.querySelector('input[name="descr"]').value;
   
     const response = await fetch(`/api/todos`, {
